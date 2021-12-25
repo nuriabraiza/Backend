@@ -23,17 +23,17 @@ class Usuario {
   addMascota() {
     let newMascota = prompt("Ingrese nombre de mascota");
     let newMascota2 = prompt("Ingrese tipo de mascota");
-    let newPet = [{ nombre, tipo }];
-    nombre = newMascota;
-    tipo = newMascota2;
+    let newPet = { nombre: `${newMascota}`, tipo: `${newMascota2}` };
+    this.mascotas.nombre = newMascota;
+    this.mascotas.tipo = newMascota2;
     this.mascotas.push(newPet);
   }
   addBook() {
     let newLibro = prompt("Ingrese titulo del libro");
     let newLibro2 = prompt("Ingrese autor del libro");
-    let newBook = [{ titulo, autor }];
-    titulo = newLibro;
-    autor = newLibro2;
+    let newBook = { titulo: `${newLibro}`, autor: `${newLibro2}` };
+    this.libros.titulo = newLibro;
+    this.libros.autor = newLibro2;
     this.libros.push(newBook);
   }
 }
@@ -66,6 +66,10 @@ const user3 = new Usuario(
   ]
 );
 
-console.log(user1.getFullName());
-console.log(user2.countMascota());
-console.log(user3.getBookNames());
+//console.log(user1.getFullName());
+//console.log(user2.countMascota());
+//console.log(user3.getBookNames());
+//console.log(user1.addBook());
+//console.log(user1.getBookNames());
+//console.log(user2.addMascota());
+//console.log(user2.countMascota());
