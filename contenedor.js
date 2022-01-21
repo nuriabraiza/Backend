@@ -1,4 +1,9 @@
 const fs = require("fs");
+const express = require("express");
+const RandomNumber = (min, max) =>
+  Math.round(Math.random() * (max + min) + min);
+const app = express();
+const PORT = 3004;
 
 class Contenedor {
   constructor(file) {
@@ -139,12 +144,14 @@ class Contenedor {
   }
 }
 
+module.exports = Contenedor;
+
 /* ------ PRUEBA ------ */
 
 const carrito = new Contenedor("productos");
 
 // SAVE()
-/*carrito
+carrito
   .save({
     title: "Escuadra",
     price: 123.45,
@@ -152,7 +159,6 @@ const carrito = new Contenedor("productos");
       "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
   })
   .then(() =>
-    //Producto 2
     carrito
       .save({
         title: "Calculadora",
@@ -161,7 +167,6 @@ const carrito = new Contenedor("productos");
           "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
       })
       .then(() =>
-        //Producto 3
         carrito.save({
           title: "Globo Terráqueo",
           price: 345.67,
@@ -169,7 +174,7 @@ const carrito = new Contenedor("productos");
             "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
         })
       )
-  );*/
+  );
 
 //GET BY ID
 //carrito.getById(2).then((data) => console.log(data));
