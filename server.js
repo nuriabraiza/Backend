@@ -1,42 +1,29 @@
 const express = require("express");
+const app = express();
 const Contenedor = require("./contenedor");
-const RandomNumber = (min, max) =>
-  Math.round(Math.random() * (max + min) + min);
+const productsList = new Contenedor("./productos");
 
-const PORT = 3003;
-/* ------ SERVER ------ */
+//ROUTES
+app.get("/", (req, res) => {
+  res.send("Bienvenidos - Ir a /productos o /productoRandom");
+});
 
-class Server {
-  constructor(port = PORT, fileName = "productos") {
-    this.app = express();
-    this.PORT = port;
-    this.database = new Contenedor(fileName);
-    this.routes();
-  }
-  routes() {
-    this.app.get("/", (req, res) => {
-      console.log(req);
-      res.send("Bienvenidos");
-    });
+app.get("/productos", async (req, res) => {
+  const products = await productsList.getAll();
+  res.send(products);
+});
 
-    this.app.get("/productos", (req, res) => {
-      this.database.getAll().then((items) => {
-        res.send(items.productos);
-      });
-    });
+app.get("/productoRandom", async (req, res) => {
+  const randomProduct = await productsList.getRandomProduct();
 
-    this.app.get("/productoRandom", (req, res) => {
-      this.database.getById(RandomNumber(1, 6)).then((item) => {
-        res.send(item.producto);
-      });
-    });
+  res.send(randomProduct);
+});
 
-    this.app.listen(PORT, () => {
-      console.log(
-        `Servidor Http escuchando en el puerto http://localhost:${this.PORT}`
-      );
-    });
+//START SERVER
+const PORT = process.env.PORT || 3050;
 
-    this.app.on("error", (error) => console.log(`Error en servidor ${error}`));
-  }
-}
+const server = app.listen(PORT, () => {
+  console.log(`Server on port http://localhost:${PORT}`);
+});
+
+server.on("error", (err) => console.log(`Error in server: ${err}`));

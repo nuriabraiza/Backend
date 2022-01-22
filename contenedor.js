@@ -1,10 +1,4 @@
 const fs = require("fs");
-const express = require("express");
-const RandomNumber = (min, max) =>
-  Math.round(Math.random() * (max + min) + min);
-const app = express();
-const PORT = 3004;
-
 class Contenedor {
   constructor(file) {
     this.path = "./";
@@ -140,6 +134,19 @@ class Contenedor {
         message: "Hubo un error al intentar borrar los archivos.",
         error: err,
       };
+    }
+  }
+  async getRandomProduct() {
+    let randomList = await productos.getAll();
+    const maxId = randomList.length;
+
+    if (maxId) {
+      const randomId = parseInt(Math.random() * maxId + 1);
+      const randomProduct = await productos.getById(randomId);
+
+      return randomProduct;
+    } else {
+      return "Producto no encontrado";
     }
   }
 }
