@@ -136,19 +136,6 @@ class Contenedor {
       };
     }
   }
-  async getRandomProduct() {
-    let randomList = await productos.getAll();
-    const maxId = randomList.length;
-
-    if (maxId) {
-      const randomId = parseInt(Math.random() * maxId + 1);
-      const randomProduct = await productos.getById(randomId);
-
-      return randomProduct;
-    } else {
-      return "Producto no encontrado";
-    }
-  }
 }
 
 module.exports = Contenedor;

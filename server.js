@@ -14,9 +14,9 @@ app.get("/productos", async (req, res) => {
 });
 
 app.get("/productoRandom", async (req, res) => {
-  const randomProduct = await productsList.getRandomProduct();
-
-  res.send(randomProduct);
+  const data = await productsList.getAll();
+  const random = Math.floor(Math.random() * data.length);
+  res.send(await productsList.getById(parseInt(random + 1)));
 });
 
 //START SERVER
