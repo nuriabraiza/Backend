@@ -20,7 +20,7 @@ app.get("/productoRandom", async (req, res) => {
 });
 
 //START SERVER
-const PORT = process.env.PORT || 3050;
+const PORT = 8080;
 
 const server = app.listen(PORT, () => {
   console.log(`Server on port http://localhost:${PORT}`);
