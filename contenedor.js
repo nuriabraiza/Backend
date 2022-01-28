@@ -145,7 +145,7 @@ module.exports = Contenedor;
 const carrito = new Contenedor("productos");
 
 // SAVE()
-carrito
+/*carrito
   .save({
     title: "Escuadra",
     price: 123.45,
@@ -168,7 +168,7 @@ carrito
             "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
         })
       )
-  );
+  );*/
 
 //GET BY ID
 //carrito.getById(2).then((data) => console.log(data));

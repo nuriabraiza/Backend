@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const Contenedor = require("./contenedor");
-const productsList = new Contenedor("./productos");
+const productsList = new Contenedor("productos");
 
 //ROUTES
 app.get("/", (req, res) => {
@@ -13,10 +13,18 @@ app.get("/productos", async (req, res) => {
   res.send(products);
 });
 
-app.get("/productoRandom", async (req, res) => {
-  const data = await productsList.getAll();
-  const random = Math.floor(Math.random() * data.length);
-  res.send(await productsList.getById(parseInt(random + 1)));
+app.get("/productoRandom", (req, res) => {
+  const productosParseados = JSON.parse(products, null, 2);
+  function obtenerProductoRandom(array) {
+    const index = Math.floor(Math.random(array) * array.length);
+    return array[index];
+  }
+  const productoRandom = obtenerProductoRandom(productosParseados);
+  const respuesta = {
+    code: 200,
+    msg: productoRandom,
+  };
+  res.send(respuesta);
 });
 
 //START SERVER
