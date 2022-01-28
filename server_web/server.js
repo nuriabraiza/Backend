@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const Contenedor = require("./contenedor");
+const Contenedor = require("../manejo_archivos/contenedor");
 const productsList = new Contenedor("productos");
 
 //ROUTES
