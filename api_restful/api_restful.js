@@ -10,14 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", apiRouter);
 app.use("/static", express.static(__dirname + "/public"));
 
+//GET
 apiRouter.get("/productos", (req, res) => {
   res.send(Producto.prodList);
-});
-
-apiRouter.post("/productos", (req, res, next) => {
-  let toAdd = req.body;
-  let prod = Producto.newProd(toAdd);
-  res.send(prod);
 });
 
 apiRouter.get("/productos/:id", (req, res) => {
@@ -25,6 +20,14 @@ apiRouter.get("/productos/:id", (req, res) => {
   res.send(Producto.getById(id));
 });
 
+//POST
+apiRouter.post("/productos", (req, res, next) => {
+  let toAdd = req.body;
+  let prod = Producto.newProd(toAdd);
+  res.send(prod);
+});
+
+//PUT
 apiRouter.put("/productos/:id", (req, res, next) => {
   let toChange = req.body;
   let id = req.params.id;
@@ -32,6 +35,7 @@ apiRouter.put("/productos/:id", (req, res, next) => {
   console.log("Producto Actualizado");
 });
 
+//DELETE
 apiRouter.delete("/productos/:id", (req, res, next) => {
   let id = req.params.id;
   res.send(Producto.deleteProd(id));

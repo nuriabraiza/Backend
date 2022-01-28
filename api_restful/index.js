@@ -2,6 +2,7 @@ class Producto {
   productos = [];
   id = 0;
 
+  //POST
   newProd(producto) {
     this.productos.push({
       id: ++this.id,
@@ -13,6 +14,7 @@ class Producto {
     return this.productos[this.id - 1];
   }
 
+  //GET
   getById(id) {
     let prod = this.productos.find((producto) => {
       return producto.id == id;
@@ -32,6 +34,7 @@ class Producto {
     return this.productos;
   }
 
+  //PUT
   updateProd(cambios, id) {
     let indiceProd = this.productos.findIndex((prod) => {
       return prod.id == id;
@@ -40,6 +43,7 @@ class Producto {
     return (this.productos[indiceProd] = prodActualizado);
   }
 
+  //DELETE
   deleteProd(id) {
     let indiceProd = this.productos.findIndex((prod) => {
       if (prod.id == id) {
