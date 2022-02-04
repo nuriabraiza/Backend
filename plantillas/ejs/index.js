@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 app.use("/", apiRouter);
 app.use(express.static("public"));
 
-const PORT = 8080;
+const PORT = 3004;
 
 app.listen(PORT, (err) => {
   if (err) {
