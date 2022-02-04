@@ -1,0 +1,19 @@
+div.table-responsive
+    table.table.table-dark.table-hover.container
+        thead
+        tr
+            th #
+            th Producto
+            th Precio
+            th Imagen
+        tbody.thead-light
+            each n in productos
+                tr
+                    th= n.id
+                    th= n.title
+                    th= n.price
+                    th
+                        img(width="40",height="40",src= n.thumbnail , alt="image")
+            else
+                h3.alert.alert-danger No se encontraron productos
+    a(href="/" , class="btn btn-info mt-3 mb-5") Ir a formulario

@@ -1,0 +1,12 @@
+form(action='/productos' method='POST')
+    div.form-group
+        label.fst-italic(for='title') Nombre
+        input#title.form-control(type='text' name='title' required='' minlength='1')
+    div.form-group
+        label.fst-italic(for='price') Precio:
+        input#price.form-control(type='text' name='price' required='' minlength='1')
+    div.form-group
+        label.fst-italic(for='thumbnail') Foto URL:
+        input#thumbnail.form-control(type='text' name='thumbnail' required='' minlength='1')
+    input.btn.btn-success.mt-3.mb-5(type='submit' value='Enviar')
+    a(class='btn btn-info mt-3 mb-5', href='/productos') Ir a Lista

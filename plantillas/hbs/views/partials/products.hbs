@@ -1,0 +1,32 @@
+<h2
+  class="text-start mt-5 mb-5 fw-bolder"
+  style="font-family: Arial, Helvetica, sans-serif;"
+>Vista de productos</h2>
+
+{{#if productos}}
+  <div class="table-responsive">
+    <table class="table table-dark table-hover container">
+      <thead>
+        <tr style="color: white">
+          <th>#</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each productos}}
+          <tr class="thead-light">
+            <th> {{this.id}} </th>
+            <th> {{this.title}} </th>
+            <th> {{this.price}} </th>
+            <th><img width="40" height="40" src={{this.thumbnail}} /></th>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <a href="/" class="btn btn-info mt-3 mb-5"> Ir a formulario </a>
+  </div>
+{{else}}
+  <h3 class="alert alert-danger">No se encontraron productos</h3>
+{{/if}}

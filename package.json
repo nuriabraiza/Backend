@@ -1,17 +1,21 @@
 {
   "dependencies": {
+    "dotenv": "^14.3.2",
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
     "fs": "^0.0.1-security",
     "moment": "^2.29.1",
-    "multer": "^1.4.4"
+    "multer": "^1.4.4",
+    "pug": "^3.0.2"
   },
   "name": "backend",
   "version": "1.0.0",
-  "main": "api_restful.js",
+  "main": "index_motores.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": " nodemon api_restful.js",
-    "start": "node api_restful.js"
+    "dev": " nodemon ./motores_plantillas/index_motores.js",
+    "start": "node index_motores.js"
   },
   "repository": {
     "type": "git",
