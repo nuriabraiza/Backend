@@ -1,31 +1,35 @@
-const Producto = require("../services/product.service.js");
+const Product = require("../services/product.service.js");
 
 exports.getForm = async (req, res) => {
-  await res.render("index", { productos: Producto.getAll });
+  await res.render("index", { productos: Product.getAll() });
 };
 
 exports.getAll = async (req, res) => {
-  await res.render("productList", { productos: Producto.getAll });
+  const result = await Product.getAll();
+  res.json(result);
 };
 
 exports.newProd = async (req, res) => {
-  let toAdd = await req.body;
-  Producto.newProd(toAdd);
-  res.redirect("/");
+  const { title, price, thumbnail } = req.body;
+  const result = await Product.newProd(title, price, thumbnail);
+  res.json(result);
 };
 
 exports.getById = async (req, res) => {
   let id = await req.params.id;
-  await res.status(200).json(Producto.getById(id));
+  const result = await Product.getById(id);
+  res.status(200).json(result);
 };
 
 exports.updateProd = async (req, res) => {
   let toChange = await req.body;
   let id = await req.params.id;
-  await res.status(200).json(Producto.updateProd(toChange, id));
+  const result = await Product.updateProd(toChange, id);
+  res.status(200).json(result);
 };
 
 exports.deleteProd = async (req, res) => {
   let id = await req.params.id;
-  await res.status(200).json(Producto.deleteProd(id));
+  const result = await Product.deleteProd(id);
+  res.status(200).json(result);
 };

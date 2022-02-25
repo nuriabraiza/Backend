@@ -1,59 +1,74 @@
-let { products } = require("../data.js");
-const ids = products.map((product) => product.id);
+const db = require("../database/db");
 
-class Producto {
-  productos = products;
-  id = ids.length;
-
-  newProd(producto) {
-    this.productos.push({
-      title: producto.title,
-      price: producto.price,
-      thumbnail: producto.thumbnail,
-      id: ++this.id,
-    });
-
-    return this.productos[this.id];
-  }
-
-  getById(id) {
-    let prod = this.productos.find((producto) => {
-      return producto.id == id;
-    });
-    if (prod == undefined) {
-      return '{error: "Producto no encontrado."}';
+class Product {
+  async newProd(title, price, thumbnail) {
+    //
+    try {
+      const [id] = await db("product")
+        .insert({
+          title,
+          price,
+          thumbnail,
+        })
+        .returning("id");
+      return { msg: `producto ${id} creado` };
+    } catch (err) {
+      console.log("[falla al guardar]", err);
     }
-
-    return prod;
   }
 
-  get getAll() {
-    if (this.productos.length == 0) {
-      return [];
+  async getById(id) {
+    try {
+      const data = await db("product")
+        .select("id", "title", "price", "thumbnail")
+        .where({ id: id });
+      return data;
+    } catch (error) {
+      console.log(error);
     }
-
-    return this.productos;
   }
 
-  updateProd(cambios, id) {
-    let indiceProd = this.productos.findIndex((prod) => {
-      return prod.id == id;
-    });
-    let prodActualizado = { ...cambios, id: id };
-    return (this.productos[indiceProd] = prodActualizado);
-  }
+  async getAll() {
+    try {
+      const result = await db("product").select(
+        "id",
+        "title",
+        "price",
+        "thumbnail"
+      );
 
-  deleteProd(id) {
-    let indiceProd = this.productos.findIndex((prod) => {
-      if (prod.id == id) {
-        return prod;
-      }
-    });
-    if (indiceProd == -1) {
-      return '{error: "Producto no encontrado."}';
+      return result;
+    } catch (error) {
+      console.log(error);
+      return "[]";
     }
-    return this.productos.splice(indiceProd, 1)[0];
+  }
+
+  async updateProd(cambios, id) {
+    try {
+      const { title, thumbnail, price } = cambios;
+      const timestamp = db.fn.now();
+      await db("product").where("id", id).update({
+        title: title,
+        thumbnail: thumbnail,
+        price: price,
+        updated_at_utc: timestamp,
+      });
+
+      return { msg: `producto ${id} actualizado` };
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async deleteProd(id) {
+    try {
+      await db("product").where({ id: id }).del();
+      return { msg: `producto ${id} eliminado` };
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 
-module.exports = new Producto();
+module.exports = new Product();

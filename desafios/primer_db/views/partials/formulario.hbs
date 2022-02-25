@@ -1,0 +1,43 @@
+<h3 class="text-start mt-5 mb-5 fw-bolder text-primary">
+	Ingrese Producto
+</h3>
+<form action="/productos" method="POST">
+
+	<div class="form-group">
+		<label for="title" class="fst-italic">Nombre</label>
+		<input
+			type="text"
+			class="form-control"
+			name="title"
+			id="title"
+			required
+			minlength="1"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="price" class="fst-italic">Precio</label>
+		<input
+			type="text"
+			class="form-control"
+			name="price"
+			id="price"
+			required
+			minlength="1"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="thumbnail" class="fst-italic">Foto URL</label>
+		<input
+			type="text"
+			class="form-control"
+			name="thumbnail"
+			id="thumbnail"
+			required
+			minlength="1"
+		/>
+	</div>
+
+	<button id="btnId" class="btn btn-success mt-3 mb-5">Enviar</button>
+
+</form>
+<script src="/public/client.js"></script>
