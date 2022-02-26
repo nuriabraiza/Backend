@@ -4,7 +4,7 @@ module.exports = {
   development: {
     client: "sqlite3",
     connection: {
-      filename: "./src/database/mensajes.sqlite3",
+      filename: "./database/mensajes.sqlite3",
     },
     useNullAsDefault: false,
   },
@@ -13,8 +13,7 @@ module.exports = {
     client: "mysql",
     connection: {
       database: process.env.DB,
-      user: "root",
-      password: process.env.PASS || "",
+      user: process.env.USER,
       host: "127.0.0.1",
       port: process.env.PORT || "3306",
     },

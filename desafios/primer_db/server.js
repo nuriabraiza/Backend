@@ -1,34 +1,27 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const Producto = require("./src/services/product.service");
-const apiRouter = require("./src/routes/productos.routes");
-const server = require("http").Server(app);
-const io = require("socket.io")(server);
+const Producto = require("./services/product.service");
+const apiRouter = require("./routes/products.routes");
+let { Server: HttpServer } = require("http");
+let { Server: SocketIO } = require("socket.io");
 const moment = require("moment");
-const { engine } = require("express-handlebars");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", apiRouter);
-app.use("/static", express.static("/public"));
 app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
-app.use("/public", express.static(__dirname + "/public"));
+app.use("/", apiRouter);
+app.use(express.static("public"));
 
-// Motor de plantilla
-app.engine(
-  "handlebars",
-  engine({
-    extname: "hbs",
-    defaultLayout: "main.hbs",
-    layoutsDir: path.resolve(__dirname, "./views/layouts"),
-    partialsDir: path.resolve(__dirname, "./views/partials"),
-  })
-);
-app.set("view engine", "handlebars");
-app.set("views", "./views");
+app.get("/", (req, res, next) => {
+  res.render("index", {});
+});
+
+let http = new HttpServer(app);
+let io = new SocketIO(http);
 
 const messages = [
   { author: "Juan", text: "¡Hola! que tal?" },
@@ -38,8 +31,6 @@ const messages = [
 
 io.on("connection", (socket) => {
   console.log("usuario conectado");
-
-  //socket.on("producto", (data) => Producto.nuevoProducto(data));
 
   emitMessages();
 
@@ -51,9 +42,9 @@ io.on("connection", (socket) => {
 });
 const emitMessages = () => io.sockets.emit("mensajes", messages);
 
-const PORT = 3002;
+const PORT = 5050;
 
-server.listen(PORT, (err) => {
+http.listen(PORT, (err) => {
   if (err) {
     console.log(err);
   } else {

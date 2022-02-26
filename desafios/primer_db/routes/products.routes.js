@@ -5,9 +5,9 @@ const productController = require("../controller/product.controller.js");
 
 apiRouter.get("/", productController.getForm);
 
-apiRouter.post("/productos", productController.newProd);
-
 apiRouter.get("/productos", productController.getAll);
+
+apiRouter.post("/productos", productController.newProd);
 
 apiRouter.get("/productos/:id", productController.getById);
 
