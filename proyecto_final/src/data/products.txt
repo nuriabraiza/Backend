@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "title": "aa",
+    "price": 222,
+    "description": "adadvadvadv",
+    "code": "123",
+    "stock": 10,
+    "thumbnail": "http://localhost:8080/images/1648298723501.jpeg",
+    "id": 1,
+    "timestamp": 1648298723512
+  }
+]

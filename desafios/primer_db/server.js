@@ -42,7 +42,7 @@ io.on("connection", (socket) => {
 });
 const emitMessages = () => io.sockets.emit("mensajes", messages);
 
-const PORT = 5050;
+const PORT = 8080;
 
 http.listen(PORT, (err) => {
   if (err) {
