@@ -1,4 +1,4 @@
-import Contenedor from "../../services/databaseMongo.js";
+import Contenedor from "../../services/dbMongo.js";
 import cartSchema from "../../models/cart.js";
 import ProductMongo from "../product/productMongo.js";
 
