@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Container from "../containers/Container.js";
+import Container from "../containers/container.js";
 
 class MessagesApi extends Container {
   constructor() {

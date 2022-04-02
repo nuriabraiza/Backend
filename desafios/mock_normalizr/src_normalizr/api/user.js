@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import Container from "../containers/Container.js";
+import Container from "../containers/container.js";
+import { MessagesApi } from "./messages.js";
 
 class UsersApi extends Container {
   constructor() {
@@ -16,7 +17,7 @@ class UsersApi extends Container {
           required: true,
           default: "https://avatars.dicebear.com/api/identicon/default.png",
         },
-        text: { type: String, required: true },
+        text: new MessagesApi(),
       }),
       "Usuario"
     );
