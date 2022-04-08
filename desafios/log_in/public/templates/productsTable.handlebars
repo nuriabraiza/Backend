@@ -1,0 +1,18 @@
+<h3 class="m-0 mb-4">Productos</h3>
+{{#if products.length}}
+<div class="row row-cols-1 row-cols-md-3 g-4" id="products">
+    {{#each products}}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{this.thumbnail}}" class="card-img-top product-img" alt="{{this.title}}" />
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}} - ${{this.price}}</h5>
+                <button class="btn btn-primary" disabled>Ver detalles</button>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<h2>Lo sentimos, no hay ningun producto que mostrar. Vuelva mas tarde</h2>
+{{/if}}
