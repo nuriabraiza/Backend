@@ -32,7 +32,7 @@ app.set("view engine", "ejs");
 
 app.use(
   session({
-    store: MongoStore.create({ mongoUrl: config.mongodb.cnxStr }),
+    store: MongoStore.create({ mongoUrl: config.mongo.baseUrl }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
