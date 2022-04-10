@@ -7,8 +7,6 @@ import { Server as HttpServer } from "http";
 import { Server as Socket } from "socket.io";
 import config from "./config.js";
 import productsApiRouter from "./routers/api/products.js";
-import authWebRouter from "./routers/web/auth.js";
-import homeWebRouter from "./routers/web/home.js";
 import addMessagesHandlers from "./routers/ws/messages.js";
 import addProductsHandlers from "./routers/ws/products.js";
 
@@ -43,8 +41,6 @@ app.use(
   })
 );
 app.use("/api", productsApiRouter);
-app.use(authWebRouter);
-app.use(homeWebRouter);
 
 const connectedServer = httpServer.listen(config.PORT, () => {
   console.log(
