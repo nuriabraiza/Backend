@@ -1,0 +1,28 @@
+{
+  "apps": [
+    {
+      "name": "app",
+      "script": "main.js",
+      "watch": "true",
+      "args": "-p 8082"
+    },
+    {
+      "name": "app1",
+      "script": "main.js",
+      "watch": "true",
+      "args": "-p 8083"
+    },
+    {
+      "name": "app2",
+      "script": "main.js",
+      "watch": "true",
+      "args": "-p 8084"
+    },
+    {
+      "name": "app3",
+      "script": "main.js",
+      "watch": "true",
+      "args": "-p 8085"
+    }
+  ]
+}
