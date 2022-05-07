@@ -1,0 +1,2 @@
+[2022-05-07T18:56:33.455] [ERROR] default - Error al obtener el Usuario TypeError: Cannot read property 'findOne' of undefined
+[2022-05-07T18:59:05.681] [ERROR] default - Error al obtener los Productos TypeError: Cannot read property 'find' of undefined

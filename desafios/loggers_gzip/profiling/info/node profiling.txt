@@ -1,0 +1,129 @@
+Statistical profiling result from isolate-000001C017C58EC0-21932-v8.log, (5154 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   4982   96.7%          C:\Windows\SYSTEM32\ntdll.dll
+    165    3.2%          C:\Program Files\nodejs\node.exe
+      2    0.0%          C:\Windows\System32\KERNELBASE.dll
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      3    0.1%   60.0%  LazyCompile: *resolve node:path:158:10
+      1    0.0%   20.0%  LazyCompile: *emit node:events:340:44
+      1    0.0%   20.0%  Function: ^nextTick node:internal/process/task_queues:104:18
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      5    0.1%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      6    0.1%  120.0%  GC
+   5149   99.9%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   4982   96.7%  C:\Windows\SYSTEM32\ntdll.dll
+
+    165    3.2%  C:\Program Files\nodejs\node.exe
+    117   70.9%    C:\Program Files\nodejs\node.exe
+     32   27.4%      Function: ^compileFunction node:vm:308:25
+     30   93.8%        Function: ^wrapSafe node:internal/modules/cjs/loader:1011:18
+     30  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+     28   93.3%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      2    6.7%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      2    6.3%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1011:18
+      2  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1051:37
+      2  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      6    5.1%      Function: ^realpathSync node:fs:2410:22
+      5   83.3%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      5  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      4   80.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1   20.0%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1   16.7%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: *Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      6    5.1%      Function: ^openSync node:fs:576:18
+      6  100.0%        Function: ^readFileSync node:fs:450:22
+      6  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      4   66.7%            Function: ^Module.load node:internal/modules/cjs/loader:963:33
+      2   33.3%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      6    5.1%      C:\Program Files\nodejs\node.exe
+      4   66.7%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      4  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      3   75.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1   25.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1   16.7%        Function: ^toString C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\uid-safe\index.js:102:19
+      1  100.0%          Function: ^uidSync C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\uid-safe\index.js:75:18
+      1  100.0%            Function: ^generateSessionId C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express-session\index.js:518:27
+      1   16.7%        C:\Program Files\nodejs\node.exe
+      1  100.0%          LazyCompile: ~NativeCollection.<computed> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:76:43
+      1  100.0%            LazyCompile: ~create C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\mongoose\lib\model.js:1720:26
+      5    4.3%      Function: ^stat node:internal/modules/cjs/loader:151:14
+      3   60.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      3  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      3  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2   40.0%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      4    3.4%      Function: ^authenticate C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\passport\lib\middleware\authenticate.js:94:31
+      3   75.0%        LazyCompile: *trim_prefix C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:288:23
+      3  100.0%          LazyCompile: *next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:176:16
+      3  100.0%            Function: ^initialize C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\passport\lib\middleware\initialize.js:51:29
+      1   25.0%        Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%          Function: ^trim_prefix C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:288:23
+      1  100.0%            Function: ^<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+      3    2.6%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+      3  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+      3  100.0%          Function: ^Socket._writeGeneric node:net:769:42
+      3  100.0%            Function: ^Socket._write node:net:806:35
+      2    1.7%      LazyCompile: ~configSecureContext node:internal/tls/secure-context:120:29
+      2  100.0%        LazyCompile: ~createSecureContext node:_tls_common:98:29
+      2  100.0%          LazyCompile: ~connect node:_tls_wrap:1597:35
+      2  100.0%            LazyCompile: ~makeConnection C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\mongoose\node_modules\mongodb\lib\cmap\connect.js:227:24
+      2    1.7%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1   50.0%          Function: ~<anonymous> node:internal/webstreams/readablestream:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   50.0%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    1.7%      LazyCompile: *resolve node:path:158:10
+      1   50.0%        LazyCompile: *toNamespacedPath node:path:618:19
+      1  100.0%          Function: ^realpathSync node:fs:2410:22
+      1  100.0%            Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1   50.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      2    1.7%      LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      2  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      2  100.0%          LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      2    1.7%      Function: ^slice node:buffer:593:12
+      2  100.0%        Function: ^toString node:buffer:782:46
+      2  100.0%          Function: ^readFileSync node:fs:450:22
+      2  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      2    1.7%      Function: ^cpus node:os:133:14
+      2  100.0%        Function: ^<anonymous> file:///C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\src\routers\web\home.js:15:28
+      2  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+      2  100.0%            Function: ^next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+      2    1.7%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1   50.0%          Function: ~<anonymous> node:http:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   50.0%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    1.8%    LazyCompile: *compileFunction node:vm:308:25
+      3  100.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1051:37
+      3  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      3  100.0%          LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      2   66.7%            LazyCompile: *Module.require node:internal/modules/cjs/loader:991:36
+      1   33.3%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+

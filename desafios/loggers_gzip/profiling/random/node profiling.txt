@@ -1,0 +1,121 @@
+Statistical profiling result from isolate-0000017F4DAF6E80-9976-v8.log, (6368 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   3239   50.9%          C:\Windows\SYSTEM32\ntdll.dll
+   1099   17.3%          C:\Program Files\nodejs\node.exe
+      1    0.0%          C:\Windows\System32\KERNEL32.DLL
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+   2026   31.8%   99.9%  LazyCompile: *<anonymous> file:///C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\src\routers\api\random.js:6:32
+      2    0.0%    0.1%  LazyCompile: *resolve node:path:158:10
+      1    0.0%    0.0%  LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+   2029   31.9%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+     41    0.6%    2.0%  GC
+   4339   68.1%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   3239   50.9%  C:\Windows\SYSTEM32\ntdll.dll
+
+   2026   31.8%  LazyCompile: *<anonymous> file:///C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\src\routers\api\random.js:6:32
+   1995   98.5%    Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+   1416   71.0%      Function: ^next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+   1416  100.0%        Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+   1416  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+   1416  100.0%            Function: ^<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+    579   29.0%      LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+    374   64.6%        LazyCompile: ~dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+    374  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+    374  100.0%            Function: ^<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+    205   35.4%        Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+    205  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+    205  100.0%            Function: ^<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+     31    1.5%    LazyCompile: ~handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     31  100.0%      LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+     31  100.0%        LazyCompile: ~dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+     31  100.0%          LazyCompile: ~handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     31  100.0%            LazyCompile: ~<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+
+   1099   17.3%  C:\Program Files\nodejs\node.exe
+    509   46.3%    C:\Program Files\nodejs\node.exe
+    411   80.7%      LazyCompile: *<anonymous> file:///C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\src\routers\api\random.js:6:32
+    402   97.8%        Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+    274   68.2%          Function: ^next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+    274  100.0%            Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+    128   31.8%          LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+     83   64.8%            LazyCompile: ~dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+     45   35.2%            Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+      9    2.2%        LazyCompile: ~handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+      9  100.0%          LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+      9  100.0%            LazyCompile: ~dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+     33    6.5%      Function: ^compileFunction node:vm:308:25
+     32   97.0%        Function: ^wrapSafe node:internal/modules/cjs/loader:1011:18
+     32  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+     30   93.8%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      2    6.3%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1    3.0%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1011:18
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1051:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      9    1.8%      C:\Program Files\nodejs\node.exe
+      4   44.4%        LazyCompile: *<anonymous> file:///C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\src\routers\api\random.js:6:32
+      4  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+      2   50.0%            LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+      2   50.0%            Function: ^next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+      1   11.1%        LazyCompile: ~parse node:url:183:37
+      1  100.0%          LazyCompile: ~urlParse node:url:153:18
+      1  100.0%            LazyCompile: ~OAuth2Strategy C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\passport-oauth2\lib\strategy.js:77:24
+      1   11.1%        Function: ~<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\mquery\lib\mquery.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1   11.1%        Function: ^splitRoot node:fs:2360:33
+      1  100.0%          Function: ^realpathSync node:fs:2410:22
+      1  100.0%            Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1   11.1%        Function: ^checkInvalidHeaderChar node:_http_common:232:32
+      1  100.0%          Function: ^<anonymous> node:_http_outgoing:564:45
+      1  100.0%            Function: ^setHeader node:_http_outgoing:574:57
+      1   11.1%        Function: ^<anonymous> node:internal/fs/utils:357:35
+      1  100.0%          Function: ^<anonymous> node:internal/fs/utils:668:38
+      1  100.0%            Function: ^<anonymous> node:internal/fs/utils:680:42
+    508   46.2%    LazyCompile: *<anonymous> file://C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\src\routers\api\random.js:6:32
+    498   98.0%      Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+    358   71.9%        Function: ^next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+    358  100.0%          Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+    358  100.0%            Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+    140   28.1%        LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+     98   70.0%          LazyCompile: ~dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+     98  100.0%            Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     42   30.0%          Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+     42  100.0%            Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     10    2.0%      LazyCompile: ~handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     10  100.0%        LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+     10  100.0%          LazyCompile: ~dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+     10  100.0%            LazyCompile: ~handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     20    1.8%    Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     14   70.0%      Function: ^next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+     14  100.0%        Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+     14  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+     14  100.0%            Function: ^<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+      6   30.0%      LazyCompile: ~next C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:114:16
+      3   50.0%        LazyCompile: ~dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+      3  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+      3  100.0%            Function: ^<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+      3   50.0%        Function: ^dispatch C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\route.js:98:45
+      3  100.0%          Function: ^handle C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\layer.js:86:49
+      3  100.0%            Function: ^<anonymous> C:\Users\I866443\Desktop\CoderHouse\Programacion Backend\BraizaNuria\Backend\desafios\loggers_gzip\node_modules\express\lib\router\index.js:275:64
+
