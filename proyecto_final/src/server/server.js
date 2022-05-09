@@ -23,6 +23,9 @@ export default class Server {
 
   routes() {
     this.app.use("/");
+    this.app.use("/heroku", (req, res) => {
+      res.send("Hola desde Heroku");
+    });
     this.app.use("/api/cart", APICart);
     this.app.use("/api/products", APIProducts);
     this.app.use("/*", (req, res) => {
