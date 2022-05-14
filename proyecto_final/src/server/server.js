@@ -38,12 +38,7 @@ export default class Server {
 
   engines() {
     this.app.engine(
-      "handlebars",
-      engine({
-        partialsDir: `${__dirname}/views/partials`,
-      })
-    );
-    this.app.set("view engine", "handlebars");
-    this.app.set("views", `${__dirname}/views`);
+      app.set("views", "./views/");
+      app.set("view engine", "ejs");
   }
 }
