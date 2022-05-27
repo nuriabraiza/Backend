@@ -42,11 +42,10 @@
   },
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": " nodemon app.js",
-    "start": "./src/app.js"
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js"
   },
   "repository": {
     "type": "git",
