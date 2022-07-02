@@ -1,0 +1,9 @@
+{
+	"$schema": "https://deno.land/x/denon@2.4.7/schema.json",
+	"scripts": {
+		"start": {
+			"cmd": "denon run --allow-net --allow-read app.tsx",
+			"desc": "run my app.tsx file"
+		}
+	}
+}
