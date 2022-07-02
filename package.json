@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@nestjs/cli": "^8.2.8",
     "0x": "^5.2.1",
     "artillery": "^2.0.0-14",
     "autocannon": "^7.8.1",
