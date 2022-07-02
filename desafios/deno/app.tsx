@@ -39,7 +39,7 @@ app.handle("/", async (req) => {
             />
             <button type="submit">Send</button>
           </form>
-          <h4 style={{ color: "paleturquoise " }}> ** Color list ** </h4>
+          <h4 style={{ color: "paleturquoise" }}> ** Color list ** </h4>
           <ul>
             {colorsArray.map((color) => (
               <li key={color} style={{ color: color }}>
