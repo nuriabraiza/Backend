@@ -24,10 +24,8 @@ app.handle("/", async (req) => {
           <meta charSet="utf-8" />
           <title>servest</title>
         </head>
-        <body style={{ backgroundColor: "lightgray" }}>
-          <h1 style={{ color: "lightseagreen" }}>
-            Hello Servest con React!!!!
-          </h1>
+        <body style={{ backgroundColor: "black" }}>
+          <h1 style={{ color: "greenyellow" }}>Hello Servest con React!!!!</h1>
           <h2 style={{ color: "mediumvioletred" }}>Visitas: {++visitas}</h2>
           <h3 style={{ color: "purple" }}>
             Fecha y hora: {new Date().toLocaleString()}
@@ -41,7 +39,7 @@ app.handle("/", async (req) => {
             />
             <button type="submit">Send</button>
           </form>
-          <h4 style={{ color: "midnightblue" }}> ** Color list ** </h4>
+          <h4 style={{ color: "paleturquoise " }}> ** Color list ** </h4>
           <ul>
             {colorsArray.map((color) => (
               <li key={color} style={{ color: color }}>
